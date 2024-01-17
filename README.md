@@ -2,10 +2,10 @@
 
 原文信息：
 
-Title: TCP Congestion Control: A Systems Approach
+**Title**: TCP Congestion Control: A Systems Approach
 
-Authors: Larry Peterson, Lawrence Brakmo, and Bruce Davie
+**Authors**: Larry Peterson, Lawrence Brakmo, and Bruce Davie
 
-Source: https://github.com/SystemsApproach/tcpcc
+**Source**: https://github.com/SystemsApproach/tcpcc
 
-License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)
+**License**: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)
