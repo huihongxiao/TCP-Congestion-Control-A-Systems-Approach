@@ -8,4 +8,4 @@ Authors: Larry Peterson, Lawrence Brakmo, and Bruce Davie
 
 Source: https://github.com/SystemsApproach/tcpcc
 
-License: CC BY-NC-ND 4.0
+License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)
