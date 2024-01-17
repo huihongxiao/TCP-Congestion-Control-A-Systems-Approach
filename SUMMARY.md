@@ -1,3 +1,4 @@
 # Table of contents
 
-* [Chapter 4: Control-Based Algorithms](README.md)
+* [简介](README.md)
+* [Chapter 4: Control-Based Algorithms](<README (1).md>)
