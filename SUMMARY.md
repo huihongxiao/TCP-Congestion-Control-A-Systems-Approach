@@ -10,3 +10,5 @@
   * [4.4 快速重传和快速恢复 未校正](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.4-kuai-su-zhong-chuan-he-kuai-su-hui-fu-wei-xiao-zheng.md)
   * [4.5 其他的修修补补 未校正](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.5-qi-ta-de-xiu-xiu-bu-bu-wei-xiao-zheng.md)
   * [4.6 TCP CUBIC 未校正](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.6-tcp-cubic-wei-xiao-zheng.md)
+* [Chapter 5: Avoidance-Based TCP拥塞控制算法](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/README.md)
+  * [5.1 TCP Vegas 未校正](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/5.1-tcp-vegas-wei-xiao-zheng.md)
