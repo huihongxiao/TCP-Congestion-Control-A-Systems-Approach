@@ -12,3 +12,7 @@
   * [4.6 TCP CUBIC 未校正](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.6-tcp-cubic-wei-xiao-zheng.md)
 * [Chapter 5: Avoidance-Based TCP拥塞控制算法](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/README.md)
   * [5.1 TCP Vegas 未校正](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/5.1-tcp-vegas-wei-xiao-zheng.md)
+  * [5.2 不同的假设 未校正](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/5.2-bu-tong-de-jia-she-wei-xiao-zheng.md)
+  * [5.3 TCP BBR 未校正](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/5.3-tcp-bbr-wei-xiao-zheng.md)
+* [Chapter 7: TCP外的拥塞控制](chapter-7-tcp-wai-de-yong-sai-kong-zhi/README.md)
+  * [7.3 HTTP性能提升（QUIC）未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.3-http-xing-neng-ti-sheng-quic-wei-xiao-zheng.md)
