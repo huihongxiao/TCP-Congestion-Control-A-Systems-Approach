@@ -9,8 +9,6 @@
 * 当时拥塞崩溃的确威胁到了初生的互联网，而论文中的工作对于互联网的最终成功具有基础性意义。没有论文中的工作，我们不太可能有如今的全球互联网。
 * 另一个原因是，拥塞控制在过去 30 年是一个硕果累累的研究领域。拥塞控制，或者更宽泛的说资源分配，有着广泛的设计空间以及足够的创新领域。几十年来的研究和实现都是基于早期的基础，并且可以合理的推断，针对已有方案的新方法和改进会继续出现，只要互联网还存在。
 
-In this book, we explore the design space for congestion control in the Internet and present a description of the major approaches to managing or avoiding congestion that have been developed over the last three decades.
-
 本书中，我们会探讨互联网中拥塞控制的设计选择，并展示过去 30 年间开发出来的管理拥塞和规避拥塞一些主要方法。
 
 _更多阅读：V. Jacobson._ [_Congestion Avoidance and Control_](https://dl.acm.org/doi/10.1145/52324.52356)_. ACM SIGCOMM ‘88 Symposium, August 1988._
