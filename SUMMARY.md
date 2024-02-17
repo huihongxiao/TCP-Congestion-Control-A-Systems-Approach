@@ -35,3 +35,5 @@
   * [7.2 Background Transport (LEDBAT) 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.2-background-transport-ledbat-wei-xiao-zheng.md)
   * [7.3 HTTP性能提升（QUIC）](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.3-http-xing-neng-ti-sheng-quic-wei-xiao-zheng.md)
   * [7.4 TCP-Friendly Protocols (TFRC) 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.4-tcpfriendly-protocols-tfrc-wei-xiao-zheng.md)
+  * [7.5 Multipath Transport 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.5-multipath-transport-wei-xiao-zheng.md)
+  * [7.6 Mobile Cellular Networks 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.6-mobile-cellular-networks-wei-xiao-zheng.md)
