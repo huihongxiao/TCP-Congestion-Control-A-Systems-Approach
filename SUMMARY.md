@@ -31,4 +31,7 @@
   * [6.4 Explicit Congestion Notification 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.4-explicit-congestion-notification-wei-xiao-zheng.md)
   * [6.5 Ingress/Egress Queue 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.5-ingressegress-queue-wei-xiao-zheng.md)
 * [Chapter 7: TCP外的拥塞控制](chapter-7-tcp-wai-de-yong-sai-kong-zhi/README.md)
+  * [7.1 Datacenters (DCTCP, On-Ramp) 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.1-datacenters-dctcp-onramp-wei-xiao-zheng.md)
+  * [7.2 Background Transport (LEDBAT) 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.2-background-transport-ledbat-wei-xiao-zheng.md)
   * [7.3 HTTP性能提升（QUIC）](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.3-http-xing-neng-ti-sheng-quic-wei-xiao-zheng.md)
+  * [7.4 TCP-Friendly Protocols (TFRC) 未校正](chapter-7-tcp-wai-de-yong-sai-kong-zhi/7.4-tcpfriendly-protocols-tfrc-wei-xiao-zheng.md)
