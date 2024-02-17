@@ -20,7 +20,7 @@ TCP 是一个面向字节的协议，这意味着发送端向 TCP 连接中写�
 
 图 7 中，TCP 连接的两端交换的 packet 被称为 segment，这是因为每个 segment 都携带了字节流的一段数据。每个 TCP segment 都携带了图 8 所示的 header。
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 8：TCP header 格式</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 8：TCP header 格式</p></figcaption></figure>
 
 * `SrcPort` 和 `DstPort` 表明了源和目的的传输层端口。这两个字段加上源目的IP地址，一起唯一标识了一个 TCP 连接。所有与 TCP 连接相关的状态，包括了后面章节介绍的拥塞控制的状态，都唯一对应一个4 元组`(SrcPort, SrcIPAddr, DstPort, DstIPAddr)`。
 * `Acknowledgment`, `SequenceNum`, 和 `AdvertisedWindow`字段与TCP 的滑动窗口算法相关。因为 TCP 是面向字节的协议，传输数据中的每一个字节都有一个序列号（Sequence number）。`SequenceNum`是当前 segment 中所有数据第一个字节对应的序列号。`Acknowledgment`和`AdvertisedWindow`包含了数据流在接收端的信息。为了简化这里的讨论，我们先不考虑数据是双向传递的，这里我们只关注数据向一边传输，如图 9 所示。
