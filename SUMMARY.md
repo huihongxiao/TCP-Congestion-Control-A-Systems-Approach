@@ -12,6 +12,8 @@
   * [2.2 可靠的字节流（Reliable Byte-Stream）](chapter-2-tcp-ji-chu/2.2-ke-kao-de-zi-jie-liu-reliable-bytestream/README.md)
     * [Nagle 和 Delayed ACK](chapter-2-tcp-ji-chu/2.2-ke-kao-de-zi-jie-liu-reliable-bytestream/nagle-he-delayed-ack.md)
   * [2.3 高速网络 未校正](chapter-2-tcp-ji-chu/2.3-gao-su-wang-luo-wei-xiao-zheng.md)
+* [Chapter 3: 如何设计拥塞控制 (Design Space) 未校正](chapter-3-ru-he-she-ji-yong-sai-kong-zhi-design-space-wei-xiao-zheng/README.md)
+  * [3.1 实现选择 未校正](chapter-3-ru-he-she-ji-yong-sai-kong-zhi-design-space-wei-xiao-zheng/3.1-shi-xian-xuan-ze-wei-xiao-zheng.md)
 * [Chapter 4: Control-Based TCP拥塞控制算法](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/README.md)
   * [4.1 TCP超时时间计算（timeout）](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.1-tcp-chao-shi-shi-jian-ji-suan/README.md)
     * [Linux 如何计算RTO](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.1-tcp-chao-shi-shi-jian-ji-suan/linux-ru-he-ji-suan-rto.md)
