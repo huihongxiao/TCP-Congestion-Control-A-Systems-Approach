@@ -22,7 +22,7 @@ TCP的拥塞控制算法采用一种自适应的，根据测量获得的RTT作�
 
 之后，TCP会使用一种非常保守的方式来根据`EstimatedRTT`计算超时时间：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="253"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="253"><figcaption></figcaption></figure>
 
 ### 4.1.2 Karn/Partridge 算法
 
@@ -49,7 +49,7 @@ Karn/Partridge 算法以其发明者命名，它的解决思路很简单，包�
 
 这里 δ位于0和1之间。在这里的公式中，我们同时计算了RTT的加权移动平均值（`EstimatedRTT`）和其波动的加权移动平均值（`Deviation`）。之后，TCP再根据下面的公式计算超时时间：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 基于经验，这里的μ通常设置为1，而φ通常设置为4。所以，当RTT的波动很小时，超时时间（`Timeout`）接近于`EstimatedRTT`，而波动很大时，`Deviation`会主导超时时间。
 

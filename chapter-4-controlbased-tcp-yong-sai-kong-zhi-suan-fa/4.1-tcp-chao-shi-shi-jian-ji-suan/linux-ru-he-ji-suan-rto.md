@@ -10,7 +10,7 @@
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 这里RTT 和其波动值的加权平均（分别对应 EstimatedRTT 和 Deviation）使用了相同的增益值δ = 1/8。这与[Jacobson/Karels 算法](https://ee.lbl.gov/papers/congavoid.pdf)的A.2 Practice 部分的前半段是一样的。但是算法在 A.2 Practice 的后半部分中同时也指出了，为了让波动值能更快的变化，可以给 Deviation一个更大的增益值，例如 1/4。
 
