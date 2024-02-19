@@ -16,13 +16,13 @@ TCP的拥塞控制算法采用一种自适应的，根据测量获得的RTT作�
 
 我们从最开始在TCP标准文档（注，[RFC793](https://www.ietf.org/rfc/rfc793.txt)）中的简单算法开始。最初算法的核心思想就是计算RTT的运行平均值，然后根据这个值来计算超时时间。具体来说，每次TCP发送一个segment，它会记录发送的时间。当收到这个segment的ACK时，TCP再次读取时间，取差值作为`SampleRTT`。然后，TCP会计算`EstimatedRTT`，具体方法是将上一次的`EstimatedRTT`和新的`SampleRTT`求加权平均。
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 这里的参数α就是加权值。α小一点的话，RTT的波动会体现的更加明显，但`EstimatedRTT`可能会受临时的波动影响。另一方面α大一些的话，`EstimatedRTT`会更加平稳，但是对于真实的网络质量的改变又不够灵敏。在 RFC793里建议设置α在0.8到0.9之间。
 
 之后，TCP会使用一种非常保守的方式来根据`EstimatedRTT`计算超时时间：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="253"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="253"><figcaption></figcaption></figure>
 
 ### 4.1.2 Karn/Partridge 算法
 
@@ -30,7 +30,7 @@ TCP的拥塞控制算法采用一种自适应的，根据测量获得的RTT作�
 
 为了得到一个精确的`SampleRTT`，还是需要知道这个ACK对应最初的segment，还是重传的segment。如图21所示，如果认为ACK对应原始的segment，但实际上它又属于重传的segment，那么算出来的`SampleRTT`就会大于实际值（a）；但是如果认为ACK是重传的segment的，但是它又实际属于原始的segment，那么`SampleRTT`又会小于实际值（b）。
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>图21. 将ACK关联到（a）原始segment 和 （b）重传的segment。</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>图21. 将ACK关联到（a）原始segment 和 （b）重传的segment。</p></figcaption></figure>
 
 Karn/Partridge 算法以其发明者命名，它的解决思路很简单，包含两个主要的改进：
 
@@ -49,7 +49,7 @@ Karn/Partridge 算法以其发明者命名，它的解决思路很简单，包�
 
 这里 δ位于0和1之间。在这里的公式中，我们同时计算了RTT的加权移动平均值（`EstimatedRTT`）和其波动的加权移动平均值（`Deviation`）。之后，TCP再根据下面的公式计算超时时间：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 基于经验，这里的μ通常设置为1，而φ通常设置为4。所以，当RTT的波动很小时，超时时间（`Timeout`）接近于`EstimatedRTT`，而波动很大时，`Deviation`会主导超时时间。
 
