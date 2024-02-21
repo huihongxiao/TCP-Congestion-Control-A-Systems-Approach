@@ -16,16 +16,16 @@ TCP的核心是滑动窗口算法。TCP除了大家熟悉的确认/超时/重传
 
 TCP 是一个面向字节的协议，这意味着发送端向 TCP 连接中写入字节，而接收端从 TCP 连接中读取字节。尽管“字节流”描述了 TCP 为应用程序提供的服务，但是 TCP 本身并不会在互联网上传输单个的字节。相应的，在发送端，TCP会从发送程序中接收并缓存足够多字节数的数据，然后填装在合适大小的 packet 中，然后将这个 packet 发送给 TCP 的接收端。TCP 的接收端会将 packet 中的所有数据存入到接收缓存中，之后，接收端程序在有空的时候读取这个 buffer 中的数据。这个过程描述在图 7 中，为了简化描述，图中只画了单向数据传输。
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="375"><figcaption><p>图 7：TCP 如何管理字节流</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 7：TCP 如何管理字节流</p></figcaption></figure>
 
 图 7 中，TCP 连接的两端交换的 packet 被称为 segment，这是因为每个 segment 都携带了字节流的一段数据。每个 TCP segment 都携带了图 8 所示的 header。
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 8：TCP header 格式</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 8：TCP header 格式</p></figcaption></figure>
 
 * `SrcPort` 和 `DstPort` 表明了源和目的的传输层端口。这两个字段加上源目的IP地址，一起唯一标识了一个 TCP 连接。所有与 TCP 连接相关的状态，包括了后面章节介绍的拥塞控制的状态，都唯一对应一个4 元组`(SrcPort, SrcIPAddr, DstPort, DstIPAddr)`。
 * `Acknowledgment`, `SequenceNum`, 和 `AdvertisedWindow`字段与TCP 的滑动窗口算法相关。因为 TCP 是面向字节的协议，传输数据中的每一个字节都有一个序列号（Sequence number）。`SequenceNum`是当前 segment 中所有数据第一个字节对应的序列号。`Acknowledgment`和`AdvertisedWindow`包含了数据流在接收端的信息。为了简化这里的讨论，我们先不考虑数据是双向传递的，这里我们只关注数据向一边传输，如图 9 所示。
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 9：简化版 TCP 流程，数据只在一个方向传递，ACK 在另一个方向传递</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 9：简化版 TCP 流程，数据只在一个方向传递，ACK 在另一个方向传递</p></figcaption></figure>
 
 * 6bit 的 `Flags` 字段用来在 TCP 两端传递控制信息。控制信息包含了：SYN 和 FIN 标志，用来建立和终结 TCP 连接；ACK 标志，用来表示`Acknowledgment`是有用的（也就是说接收端应该关注`Acknowledgment`）。
 * 最后，由于 TCP header 是可变长度的（因为在固定字段后面还有 options），所以 header 中还包含了 `HdrLen` 用来表示 TCP header 的长度是 32bit word 的多少倍。当 TCP extenstion 存在于 header 之后时，这个字段是有用的。为什么选择将 TCP extenstion 作为 option 加在 TCP header 之后而不是修改 TCP header 的固定字段？因为将TCP extension作为可变长度挂在固定字段之后，就算某些 TCP 实现没有包含对应的 extenstion，仍然能使用 TCP 进行通信（注，如果放在固定字段会导致解析出错，因为一般header解析都是移位读取内容）。TCP 会话的两端会在连接建立的过程中协商并同意使用哪些 extenstion/option。
@@ -41,17 +41,17 @@ TCP 的滑动窗口算法主要解决两个问题：
 
 图 10 展示了 TCP 滑动窗口的工作方式。TCP 的发送端维护了一个发送端 buffer，用来保存已发送但是还未被确认的数据，以及被发送端应用程序写入但是还未被传输的数据。在接收端，TCP 维护了接收端 buffer，用来保存所有接收到的数据，包括乱序和正确顺序但是应用程序还没来的及读的部分。
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 10：TCP 发送端缓存和接收端缓存之间的关系</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>图 10：TCP 发送端缓存和接收端缓存之间的关系</p></figcaption></figure>
 
 为了让接下来的讨论更加简单，我们先忽略 buffer 和序列号都是有限大小，并且最终都会溢出这个事实（注，TCP的序列号时32bit整数，针对字节数而言极易溢出）。并且我们也不区分buffer 使用的指针和序列号（注，实际中两者的相对位置是一样的，但是具体数值大概率不一样）。
 
 发送端buffer维护了三个指针，`LastByteAcked`, `LastByteSent`, 和 `LastByteWritten`，它们的名字都说明了它们的含义。因为只有数据发送了才有可能被接收端确认，所以`LastByteSent`大于等于`LastByteAcked`。因为只有数据被TCP 写入到buffer了，才有可能被发送，所以`LastByteWritten`大于等于`LastByteSent`。最终，这三个指针之间有以下明显的关系：
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 在接收端也有类似的指针（序列号），`LastByteRead`, `NextByteExpected`, 和 `LastByteRcvd`。由于乱序的存在，这里的不等式有一点点不好理解。首先，因为TCP会确保顺序，所以NextByteExpected之前的字节必然已经全部被接受，而数据只有被接受了才有可能被接收端应用程序读取，所以`NextByteExpected - 1` 大于等于`LastByteRead`。当数据顺序传输时，`NextByteExpected` 等于`LastByteRcvd + 1`。而当数据乱序时，`LastByteRcvd` 大于`NextByteExpected` ，如图10所示（注，此时表明接收端希望重传一个`LastByteRcvd` 之前的packet）。最终，这三者的关系如下表示：
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## 2.2.4 流控（Flow Control）
 
@@ -61,17 +61,17 @@ TCP 的滑动窗口算法主要解决两个问题：
 
 接下来，我们将认为 buffer 都是有限大小。TCP 接收端会通过通知发送端自己当前的 buffer 大小来调整发送端的速率。TCP 的接收端必须保证：
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 来避免自己的 buffer 被打爆。因此它会发布其 buffer 中空余的空间 `AdvertisedWindow` 大小为：
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 当接收到数据时，只要 TCP 接收端已经收到了这份数据前面的所有数据，它就会确认这份数据。对应的`NextByteExpected`会向右移动（增加），意味着 `AdvertisedWindow` 相应的减少。实际中，窗口是否真的会变小，取决于本地应用程序消费数据的速度。如果本地进程能够与数据传输相同的速度消费数据（也就是`LastByteRead` 以与`LastByteRcvd`相同的速率增加），那么`AdvertisedWindow` = `RcvBufferSize`，也就是说接收端的buffer总是为空。然而，如果接收程序落后了，例如程序要对读取的每个字节进行大量的运算，那么每当segment到达时，`AdvertisedWindow`都会变小，最终变成0。
 
 TCP发送端需要遵循它从接收端获取的`AdvertisedWindow`，在任何时刻，它必须保证：
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 换句话说，发送端会计算出它还可以发送的未被确认的数据量，并记录为`EffectiveWindow`（注，EffectiveWindow表示的是将来还可以发送的未被确认的数据量，而不是当前所有的未被确认的数据量）。
 
