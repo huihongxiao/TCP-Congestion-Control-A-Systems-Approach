@@ -2,8 +2,8 @@
 
 * [简介 by me](README.md)
 * [Chapter 1: 简介](chapter-1-jian-jie/README.md)
-  * [1.1 什么是拥塞 未校正](chapter-1-jian-jie/1.1-shi-mo-shi-yong-sai-wei-xiao-zheng.md)
-  * [1.2 控制拥塞 未校正](chapter-1-jian-jie/1.2-kong-zhi-yong-sai-wei-xiao-zheng.md)
+  * [1.1 什么是拥塞](chapter-1-jian-jie/1.1-shi-mo-shi-yong-sai.md)
+  * [1.2 控制拥塞](chapter-1-jian-jie/1.2-kong-zhi-yong-sai.md)
   * [1.3 理论基础 未校正](chapter-1-jian-jie/1.3-li-lun-ji-chu-wei-xiao-zheng.md)
   * [1.4 今天的拥塞控制 未校正](chapter-1-jian-jie/1.4-jin-tian-de-yong-sai-kong-zhi-wei-xiao-zheng.md)
   * [1.5 参考实现 未校正](chapter-1-jian-jie/1.5-can-kao-shi-xian-wei-xiao-zheng.md)
