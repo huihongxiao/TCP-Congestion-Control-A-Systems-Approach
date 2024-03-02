@@ -8,7 +8,7 @@
   * [1.4 今天的拥塞控制](chapter-1-jian-jie/1.4-jin-tian-de-yong-sai-kong-zhi.md)
   * [1.5 参考实现](chapter-1-jian-jie/1.5-can-kao-shi-xian.md)
 * [Chapter 2: TCP基础](chapter-2-tcp-ji-chu/README.md)
-  * [2.1 尽力而为的包传输 未校正](chapter-2-tcp-ji-chu/2.1-jin-li-er-wei-de-bao-chuan-shu-wei-xiao-zheng.md)
+  * [2.1 尽力而为的包传输](chapter-2-tcp-ji-chu/2.1-jin-li-er-wei-de-bao-chuan-shu.md)
   * [2.2 可靠的字节流（Reliable Byte-Stream）](chapter-2-tcp-ji-chu/2.2-ke-kao-de-zi-jie-liu-reliable-bytestream/README.md)
     * [Nagle 和 Delayed ACK](chapter-2-tcp-ji-chu/2.2-ke-kao-de-zi-jie-liu-reliable-bytestream/nagle-he-delayed-ack.md)
   * [2.3 高速网络 未校正](chapter-2-tcp-ji-chu/2.3-gao-su-wang-luo-wei-xiao-zheng.md)
