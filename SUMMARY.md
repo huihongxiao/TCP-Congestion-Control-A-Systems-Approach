@@ -31,7 +31,7 @@
   * [5.3 TCP BBR](chapter-5-avoidancebased-tcp-yong-sai-kong-zhi-suan-fa/5.3-tcp-bbr-wei-xiao-zheng.md)
 * [Chapter 6: Active Queue Management 主动队列管理](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/README.md)
   * [6.1 DECbit](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.1-decbit.md)
-  * [6.2 Random Early Detection 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.2-random-early-detection-wei-xiao-zheng.md)
+  * [6.2 Random Early Detection](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.2-random-early-detection.md)
   * [6.3 Controlled Delay 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.3-controlled-delay-wei-xiao-zheng.md)
   * [6.4 Explicit Congestion Notification 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.4-explicit-congestion-notification-wei-xiao-zheng.md)
   * [6.5 Ingress/Egress Queue 未校正](chapter-6-active-queue-management-zhu-dong-dui-lie-guan-li/6.5-ingressegress-queue-wei-xiao-zheng.md)
