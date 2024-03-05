@@ -10,7 +10,7 @@
 
 **License**: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)
 
-## 为什么要翻译这本书 by me
+## 为什么要翻译这本书
 
 理由是有一天，我在想一个问题，是什么让TCP变得如此特殊，以至于其他所有的4层及以下常见的协议都不能与其相比？其他的协议，似乎只要略微一看就能大致明白其工作原理，但是对于TCP，就算非常了解协议格式，但总给人一种蒙着面纱的感觉。这是为什么呢？
 
@@ -30,7 +30,7 @@
 
 ## 与原文有差异的地方
 
-虽然本书非常优秀，但是我还是稍微补充了部分较为实用的内容，较大的改动如下：
+虽然本书非常优秀，但是我还是稍微补充了部分较为实用的内容，改动如下：
 
 * [2.2 TCP流控](chapter-2-tcp-ji-chu/2.2-ke-kao-de-zi-jie-liu-reliable-bytestream/)，新增了一个子节，稍微展开介绍了一下如何打开关闭Nagle算法和Delayed ACK
 * [4.1 TCP 超时时间计算](chapter-4-controlbased-tcp-yong-sai-kong-zhi-suan-fa/4.1-tcp-chao-shi-shi-jian-ji-suan/)，新增了一个子节，补全了Jacobson/Karels 算法，并详细介绍了 RFC6298 和 Linux RTO 的实现方法。
@@ -40,9 +40,9 @@
 
 如果你对计算机，分布式系统也比较感兴趣，不妨看看下面我的其他翻译。
 
-* [MIT6.s081 - 操作系统](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/)
-* [MIT6.824 - 分布式系统](https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/)
-* [MIT6.829 - 计算机网络 ](https://mit-public-courses-cn-translatio.gitbook.io/mit6.829/)（只有前三章，已停更）
+* MIT6.s081 - 操作系统：[github](https://github.com/huihongxiao/MIT6.S081)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/)
+* MIT6.824 - 分布式系统：[github](https://github.com/huihongxiao/MIT6.824)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/)
+* MIT6.829 - 计算机网络 （只有前三章，已停更）：[github](https://github.com/huihongxiao/MIT6.829)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6.829/)
 
 ## _声明_
 
