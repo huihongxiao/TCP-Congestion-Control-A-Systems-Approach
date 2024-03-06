@@ -38,11 +38,7 @@
 
 ## 其他翻译
 
-如果你对计算机，分布式系统也比较感兴趣，不妨看看下面我的其他翻译。
-
-* MIT6.s081 - 操作系统：[github](https://github.com/huihongxiao/MIT6.S081)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/)
-* MIT6.824 - 分布式系统：[github](https://github.com/huihongxiao/MIT6.824)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/)
-* MIT6.829 - 计算机网络 （只有前三章，已停更）：[github](https://github.com/huihongxiao/MIT6.829)；[gitbook](https://mit-public-courses-cn-translatio.gitbook.io/mit6.829/)
+如果你对计算机，分布式系统也比较感兴趣，不妨看看[我的其他翻译](https://huihongxiao.github.io/2024/03/06/%E6%88%91%E7%9A%84%E7%BF%BB%E8%AF%91.html)。
 
 ## _声明_
 
